@@ -7,7 +7,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -25,9 +24,11 @@ public class Encomenda {
     private double peso;
 
     @Column(nullable = false)
+    @Size(max = 8)
     private String cepOrigem;
 
     @Column(nullable = false)
+    @Size(max = 8)
     private String cepDestino;
 
     @Size(max = 2)
@@ -42,7 +43,7 @@ public class Encomenda {
     private String nomeDestinatario;
 
     @Column(nullable = false)
-    private double VlTotalFrete;
+    private double vlTotalFrete;
 
     @Column(nullable = false)
     private Date dataPrevistaEntrega;
